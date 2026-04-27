@@ -36,3 +36,16 @@ distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-9.4.1-bin.zip
 ```groovy
 maven { url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
 ```
+
+### Gradle Spring-Boot 添加依赖
+
+```groovy
+dependencies {
+    implementation 'commons-codec:commons-codec'
+    implementation 'org.apache.commons:commons-lang3'
+    implementation('com.github.ben-manes.caffeine:caffeine') {
+        exclude group: 'com.google.errorprone', module: 'error_prone_annotations'
+    }
+    developmentOnly 'io.netty:netty-all'
+}
+```
